@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Southcoates2 — build progress</title>
+<style>
+ body{margin:0;font:15px/1.55 Arial,Helvetica,sans-serif;color:#1D1D1B;background:#f6f7f8}
+ .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+ a{color:#B51B41}
+ .top{background:#B51B41;color:#fff;padding:26px 20px}
+ .top .in{max-width:1080px;margin:0 auto}
+ h1{font-size:26px;margin:0 0 6px;letter-spacing:.2px}
+ .sub{opacity:.9;font-size:14px}
+ .back{color:#fff;opacity:.85;font-size:13px;text-decoration:none}
+ .cards{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 8px}
+ .card{background:#fff;border:1px solid #e3e5e7;border-radius:10px;padding:14px 18px;min-width:150px}
+ .card b{display:block;font-size:26px;line-height:1.1}
+ .card span{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:#54595F}
+ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e3e5e7;border-radius:10px;overflow:hidden;margin-top:18px}
+ th{background:#1D1D1B;color:#fff;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;padding:10px 12px}
+ td{padding:10px 12px;border-top:1px solid #eceef0;vertical-align:top;font-size:14px}
+ .ref{font-weight:700;white-space:nowrap;color:#B51B41}
+ .owner{white-space:nowrap;font-size:13px}
+ .ev{color:#3a3a3a;font-size:13px}
+ .pill{color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:20px;white-space:nowrap}
+ .note{background:#fff;border-left:4px solid #B51B41;padding:14px 16px;margin:22px 0;font-size:14px}
+ h2{font-size:18px;margin:30px 0 6px}
+ ul{margin:6px 0 0 18px;padding:0} li{margin:4px 0}
+ .foot{margin-top:34px;font-size:12px;color:#6a6f74}
+ @media(max-width:720px){table,thead,tbody,th,td,tr{display:block} thead{display:none} td{border:0;padding:4px 12px} tr{border-top:1px solid #eceef0;padding:8px 0} .ev{padding-bottom:10px}}
+</style></head><body>
+<div class="top"><div class="in">
+  <h1>Southcoates2 — build progress</h1>
+  <div class="sub">Pre-launch QA of the Parkside-derived rebuild for southcoatescarsales.co.uk</div>
+  <a class="back" href="/southcoates2-preview/">&larr; Back to the preview</a>
+</div></div>
+<div class="wrap">
+
+  <div class="cards">
+    <div class="card"><span>Built &amp; tested</span><b>12</b></div>
+    <div class="card"><span>Built, needs a nod</span><b>5</b></div>
+    <div class="card"><span>Still open</span><b>5</b></div>
+    <div class="card"><span>Deployed</span><b>0</b></div>
+  </div>
+
+  <div class="note">
+    <strong>Nothing here is live.</strong> Every built item sits in a local copy of the build and in a
+    reference patch, verified against a running Apache — <strong>45 checks, 0 failures</strong>. Mike's repo,
+    his dev box and the domain are untouched.
+  </div>
+
+  <h2>What this preview is</h2>
+  <p>A static snapshot of the build, because GitHub Pages cannot run PHP. The pages, layout and copy are
+  real; the enquiry forms, the finance calculator and live stock are not connected here. Two things look
+  wrong for that reason and only that reason: the finance panel on a vehicle page is blank (the widget needs
+  its own domain), and submitting a form does nothing.</p>
+
+  <h2>The list</h2>
+  <table>
+    <thead><tr><th>Ref</th><th>Finding</th><th>Owner</th><th>State</th><th>Where it is</th></tr></thead>
+    <tbody><tr><td class="ref">C1</td><td>Finance widget running on Parkside's CodeWeavers key</td><td class="owner">Paul</td><td><span class="pill" style="background:#B26A00">Built · confirm</span></td><td class="ev">Key swapped to the dealer's own. Codeweavers still to confirm it is licensed for the domain, and it can only be proved on the live host.</td></tr><tr><td class="ref">C2</td><td>Launch redirect map — 21 of 28 live URLs 404'd</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Six legacy URL families 301; all current vehicle URLs still 200, so the rule does not catch live slugs.</td></tr><tr><td class="ref">H1</td><td>Vehicle descriptions rendered in error red</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">text-danger removed; description renders in body colour on every VDP.</td></tr><tr><td class="ref">H2</td><td>Finance rates and the representative example</td><td class="owner">Paul</td><td><span class="pill" style="background:#B26A00">Built · confirm</span></td><td class="ev">Headline 10.4% APR, representative 19.9%: £12,995.00 / £1,299.50 / £11,695.50 / 60 x £298.82 / £19,228.46. Rate needs confirming in writing by the provider.</td></tr><tr><td class="ref">H3</td><td>Reviews page unattributable</td><td class="owner">Jon & Martin</td><td><span class="pill" style="background:#B51B41">Open</span></td><td class="ev">Six unnamed 'Verified Buyer' quotes with no date, rating or platform link. They supply genuine reviews or the section comes out.</td></tr><tr><td class="ref">H4</td><td>Body-type filter returned 1 of 8 SUVs</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Reads bodystyle with a text fallback: 10 SUV, 5 hatchback, 1 coupe against the current feed.</td></tr><tr><td class="ref">H5</td><td>Year filter silently inverted</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Reads modelyear with a registration-date fallback; the two bounds now cover every car in stock.</td></tr><tr><td class="ref">H6</td><td>Raw CRM export and build files public</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">cache/, includes/, README.md, httpd-vhosts.conf, config.example.php and stock-feed.php all 404; robots, sitemap and assets unaffected.</td></tr><tr><td class="ref">H7</td><td>Compliance block missing from the new footer</td><td class="owner">Paul</td><td><span class="pill" style="background:#B26A00">Built · confirm</span></td><td class="ev">The old site's block ported across verbatim — authorised and regulated, credit broker, commission, 18+/UK, guarantees. Jon to check the wording.</td></tr><tr><td class="ref">M1</td><td>Vehicle titles 130–158 characters</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Now 'Used BMW X3 for Sale in Hull' — 52 characters; metas 102.</td></tr><tr><td class="ref">M2</td><td>Vehicle URLs cut from the description</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Year-make-model-stockno slugs, longest 40 characters (was 95).</td></tr><tr><td class="ref">M3</td><td>Specification tab full of '--' placeholders</td><td class="owner">Paul</td><td><span class="pill" style="background:#B26A00">Built · confirm</span></td><td class="ev">Null rows dropped and the 'Tax Band: Petrol' row removed. The endpoint still fills that field wrong — Mike to raise with Carro.</td></tr><tr><td class="ref">M4</td><td>Incomplete feed records</td><td class="owner">Mike</td><td><span class="pill" style="background:#B51B41">Open</span></td><td class="ev">Missing model year on one record. The car has since sold, so it is a data-quality point rather than a live defect.</td></tr><tr><td class="ref">M5</td><td>Vans page dropped</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Decision: drop it. /vans.php 301s to stock.</td></tr><tr><td class="ref">M6</td><td>Sitemap carried no lastmod</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Every entry dated — file mtime for pages, date added to stock for vehicles.</td></tr><tr><td class="ref">M7</td><td>Opening hours conflict with the Google profile</td><td class="owner">Paul</td><td><span class="pill" style="background:#B51B41">Open</span></td><td class="ev">Site is right (Mon–Fri 08:00–18:00). The Google profile still closes at 17:00 on a Friday and needs the edit.</td></tr><tr><td class="ref">M8</td><td>Small tap targets and an unlabelled menu toggle</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">aria-label and aria-expanded on both mobile toggles; 44px targets in the footer and make list.</td></tr><tr><td class="ref">M9</td><td>No spam protection on the enquiry forms</td><td class="owner">Mike</td><td><span class="pill" style="background:#B51B41">Open</span></td><td class="ev">The code path is in the build; the missing piece is a reCAPTCHA key pair, which is an account action.</td></tr><tr><td class="ref">L1</td><td>Fuel dropdown offered options with no stock</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Built from the feed: Any / Diesel / Petrol.</td></tr><tr><td class="ref">L2</td><td>Three CDN dependencies with no fallback</td><td class="owner">Paul</td><td><span class="pill" style="background:#0F7B4F">Built</span></td><td class="ev">Bootstrap, Swiper and LazyLoad served locally from assets/vendor; no jsDelivr references left.</td></tr><tr><td class="ref">L3</td><td>Homepage never explained the dealership's history</td><td class="owner">Paul</td><td><span class="pill" style="background:#B26A00">Built · confirm</span></td><td class="ev">Service and MOT centre first, retailing cars for just over five years — written into homepage and About. Jon to approve.</td></tr><tr><td class="ref">L4</td><td>Formulaic vehicle descriptions</td><td class="owner">Jon</td><td><span class="pill" style="background:#B51B41">Open</span></td><td class="ev">Feed copy, so the dealer's to rewrite rather than ours.</td></tr><tr><td class="ref">L5</td><td>Hidden print sheet duplicates each VDP</td><td class="owner">—</td><td><span class="pill" style="background:#54595F">No action</span></td><td class="ev">Hidden on screen, costs page weight only.</td></tr></tbody>
+  </table>
+
+  <h2>Whose move it is</h2>
+  <ul>
+    <li><strong>Paul</strong> — 18 items in the build. One outstanding: the Google profile hours (M7).</li>
+    <li><strong>Mike</strong> — the feed record (M4), the reCAPTCHA key pair (M9), the Carro tech-spec field mapping behind M3, and deploying the patch.</li>
+    <li><strong>Jon &amp; Martin</strong> — the reviews (H3) and the vehicle descriptions (L4), plus a check of the compliance wording (H7) and the finance rate in writing (H2).</li>
+  </ul>
+
+  <div class="foot">
+    Static preview generated from the local build on 2 November 2026 · not indexed · forms and finance disabled.
+  </div>
+</div>
+</body></html>
