@@ -64,11 +64,7 @@
                 "address": {"@type": "PostalAddress", "streetAddress": "141 Southcoates Avenue", "addressLocality": "Hull", "addressRegion": "East Yorkshire", "postalCode": "HU9 3HF", "addressCountry": "GB"},
                 "geo": {"@type": "GeoCoordinates", "latitude": 53.758997, "longitude": -0.294028},
                 "hasMap": "https://www.google.com/maps/search/?api=1&query=Southcoates%20Car%20Sales%20Hull%20HU9%203HF",
-                "openingHoursSpecification": [
-                    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
-                    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00"},
-                    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "16:00"}
-                ],
+                "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"16:00"}],
                 "sameAs": ["https://www.facebook.com/southcoatescarsales", "https://www.instagram.com/southcoates_car_sales/", "https://www.tiktok.com/@southcoatescarsaleshull", "https://www.youtube.com/@SouthcoatesCarSales"]
             },
             {
@@ -269,15 +265,32 @@
 <section id="main" class="py-4 py-lg-5">
     <div class="container">
         <div class="text-center mb-4">
-                        <h2 class="fs-2 mb-2">Customer reviews</h2>
+                        <h2 class="fs-2 mb-2">What our customers say</h2>
+            <p class="opacity-75 mb-0">A selection of the reviews our customers have left. You can read every one of them, including any we have not shown here, on our Google profile.</p>
                     </div>
         <div id="reviews-grid">
-                                    <div class="text-center py-4">
-                <p class="mb-2">We have started collecting reviews from recent customers, but there are none on the site yet.</p>
-                <p class="opacity-75 mb-3">In the meantime, the reviews our customers have left on Google are the quickest way to see what people say about us.</p>
-                <a class="btn btn-secondary" href="https://www.google.com/search?q=Southcoates+Car+Sales+Hull+reviews" target="_blank" rel="noopener">Read our Google reviews</a>
+                                    <div class="card bg-transparent border rounded mb-4 no-img">
+                <div class="p-3">
+                    <div class="mb-2">
+                        <i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i>                                            </div>
+                    <p class="mb-3 reviewComment">Southcoates Car Sales wow wow .my car going into garage for a few bits . I asked vinny have you got car as Marina Elletson is poorly to pick me up . He as only gone insured another car for me as his other car is already out .. you tell me this is not the best garage in HULL .. THANKS VINNY.. please use this garage.. best customer care xxx</p>
+                    <p class="reviewName fw-bold opacity-75 mb-0"><small>
+                        Geoff Elletson · 1st October 2026                    </small></p>
+                    <span class="badge mt-2 p-2 text-bg-secondary">Google</span>                </div>
             </div>
-                    </div>
+                                    <div class="card bg-transparent border rounded mb-4 no-img">
+                <div class="p-3">
+                    <div class="mb-2">
+                        <i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i><i class="fa-solid fa-star text-gold"></i>                                            </div>
+                    <p class="mb-3 reviewComment">Fantastic service, great prices, very friendly and professional staff. Bought my car from here recently and I&#039;m extremely happy with it. Highly recommend to anyone. ☺️</p>
+                    <p class="reviewName fw-bold opacity-75 mb-0"><small>
+                        Barbara Bok (Niji) · 3rd May 2026                    </small></p>
+                    <span class="badge mt-2 p-2 text-bg-secondary">Google</span>                </div>
+            </div>
+                                    <p class="text-center mt-2">
+                <a class="btn btn-outline-secondary" href="https://www.google.com/search?q=Southcoates+Car+Sales+Hull+reviews" target="_blank" rel="noopener">Read all our Google reviews</a>
+            </p>
+                                </div>
     </div>
 </section>
 </main>
@@ -323,19 +336,7 @@
                                                                                 <div class="is-open p-1 fw-bold px-3 rounded text-uppercase rounded-bottom-0 d-inline-block bg-opacity-100 text-bg-secondary">We are Open</div>
                                                                             </div>
                                     <div class="vstack gap-3 my-3 small">
-                                        <div class="row g-3">
-                                            <div class="col-6 days"><div class="day opacity-75">Monday - Friday</div></div>
-                                            <div class="col-6 times"><div class="time text-end fw-bold">08:00 am - 06:00 pm</div></div>
-                                        </div>
-                                        <div class="row g-3">
-                                            <div class="col-6 days"><div class="day opacity-75">Saturday</div></div>
-                                            <div class="col-6 times"><div class="time text-end fw-bold">09:00 am - 05:00 pm</div></div>
-                                        </div>
-                                        <div class="row g-3">
-                                            <div class="col-6 days"><div class="day opacity-75">Sunday</div></div>
-                                            <div class="col-6 times"><div class="time text-end fw-bold">10:00 am - 04:00 pm</div></div>
-                                        </div>
-                                        <p class="small opacity-75 mb-0">Viewing by appointment only.</p>
+                                        <div class="row g-3"><div class="col-6 days"><div class="day opacity-75">Monday - Friday</div></div><div class="col-6 times"><div class="time text-end fw-bold">08:00 am - 08:00 pm</div></div></div><div class="row g-3"><div class="col-6 days"><div class="day opacity-75">Saturday</div></div><div class="col-6 times"><div class="time text-end fw-bold">09:00 am - 05:00 pm</div></div></div><div class="row g-3"><div class="col-6 days"><div class="day opacity-75">Sunday</div></div><div class="col-6 times"><div class="time text-end fw-bold">10:00 am - 04:00 pm</div></div></div>                                        <p class="small opacity-75 mb-0">Viewing by appointment only.</p>
                                     </div>
                                 </div>
                             </div>
